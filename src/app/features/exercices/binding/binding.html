@@ -1,1 +1,20 @@
-<p>exo binding works!</p>
+<div class="utilisateurs">
+@for (utilisateur of utilisateurs; track $index) {
+  <div class="utilisateur">
+    <div class="header">
+      <img [src]="utilisateur.profilImageUrl" alt="Image personnel de l'utilisateur">
+      <h3>{{ utilisateur.mail }}</h3>
+    </div>
+    <div class="content">
+      <h3>Description</h3>
+      <textarea [(ngModel)]="utilisateur.description" placeholder="Description de l’utilisateur"></textarea>
+      <h3>Nombre de trombone</h3>
+      <div class="trombone">
+        <button (click)="nbTrombone(false, utilisateur)">-</button>
+        <p>{{ utilisateur.nbTrombone }}</p>
+        <button (click)="nbTrombone(true, utilisateur)">+</button>
+      </div>
+    </div>
+  </div>
+}
+</div>

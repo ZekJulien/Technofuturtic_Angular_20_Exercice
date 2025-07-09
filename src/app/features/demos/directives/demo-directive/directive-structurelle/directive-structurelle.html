@@ -1,0 +1,27 @@
+@for (user of users; track $index) {
+  <h1>Etat de l'utilisateur : {{ user.name }}</h1>
+  <button (click)="toggleUserConnectionStatus($index)">
+    {{ user.isConnected ? 'Se déconnecter' : 'Se connecter' }}
+  </button>
+  @if (user.isConnected) {
+    <p>Bienvenue à toi, {{ user.name }}</p>
+  }
+  @else {
+    <p><strong>Connecte-toi svp ! </strong></p>
+  }
+  <h2>Voir les plats préférés dans la liste via un switch: </h2>
+  {{ user.listePlatPref[user.platPrefChoisi] }}
+<!--  @switch (user.platPrefChoisi) {-->
+<!--    @case (0) { {{ user.listePlatPref[0] }} }-->
+<!--    @case (1) { {{ user.listePlatPref[1] }} }-->
+<!--    @case (2) { {{ user.listePlatPref[2] }} }-->
+<!--    @default { {{ user.name }} n'a pas de plat préféré }-->
+<!--  }-->
+  <hr>
+  <br>
+}
+
+
+
+
+

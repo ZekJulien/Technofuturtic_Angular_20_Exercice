@@ -1,0 +1,55 @@
+@import '../../root/app';
+
+.navbar{
+  display: flex;
+
+  .logo{
+    flex: 0 1 250px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    p{
+      color: $secondary-color;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    img{
+      height: 48px;
+    }
+  }
+  .nav-menu{
+    flex: 9;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: $secondary-color;
+    padding: 1rem;
+    gap: 1rem;
+    //region Menu
+    .menu{
+      .item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a{
+          color: $primary-color;
+          margin: 0.25rem;
+          border-radius: 10px;
+          background-color: $secondary-color;
+        }
+      }
+      .submenu{
+        display: none;
+        visibility: hidden;
+      }
+      .item:hover .submenu{
+        display: flex;
+        visibility: visible;
+      }
+    }
+    //endregion
+  }
+}
+
+

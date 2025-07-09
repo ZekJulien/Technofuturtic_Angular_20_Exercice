@@ -1,0 +1,24 @@
+<div class="navbar">
+  <div class="logo">
+    <img src="favicon.ico" alt="logo angular">
+    <p>[Technofuturtic] Angular exercices</p>
+  </div>
+  <div class="nav-menu">
+    @for (item of navItems; track $index) {
+      <div class="menu">
+        <div class="item">
+          <a [routerLink]="item.url" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="link">
+            {{ item.name }}
+          </a>
+          <div class="submenu">
+            <div class="submenu-item">
+              <a  class="submenu-link"> Development </a>
+              <a  class="submenu-link"> Development </a>
+              <a  class="submenu-link"> Development </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

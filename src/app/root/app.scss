@@ -1,2 +1,17 @@
-$primary-color: midnightblue;
-$secondary-color: aliceblue;
+$primary-color: #202946;
+$secondary-color: #f5f0f6;
+
+.main{
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar{
+  flex: 1;
+  background-color: $primary-color;
+  max-height: 5rem;
+}
+
+.content{
+  flex: 9;
+}

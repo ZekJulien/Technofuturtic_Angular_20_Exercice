@@ -1,0 +1,22 @@
+<!-- J'utilise la variable prenom dans mon html via le binding interpolé :-->
+<p> coucou {{ prenom }}</p>
+
+<br>
+<hr>
+
+<img [src]="logoSrc" [alt]="logoAlt">
+
+
+<br>
+<hr>
+<h1> Compter les clics !</h1>
+<p><strong>{{ compteurDeClic }}</strong></p>
+<button (click)="augmenter()" > Appuie svp !</button>
+
+<br>
+<hr>
+
+<h1>Le two-way binding</h1>
+
+<input type="text" [(ngModel)]="prenom">
+<p>Valeur prénom : {{ prenom }}</p>

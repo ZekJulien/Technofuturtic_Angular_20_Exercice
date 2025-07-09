@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {DemoBinding} from '../features/demos/binding/binding';
+// import {DemoBinding} from '../features/demos/binding/binding';
 import {ExoBinding} from '../features/exercices/binding/binding';
 
 @Component({
   selector: 'app-root',
   imports: [
-    DemoBinding,
+    // DemoBinding,
     ExoBinding
   ],
   templateUrl: './app.html',

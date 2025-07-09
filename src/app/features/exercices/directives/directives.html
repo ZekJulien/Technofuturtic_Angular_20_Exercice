@@ -1,0 +1,24 @@
+<div class="produits">
+  @for (produit of produits; track $index) {
+    <div [class]="produit.qttRestante === 0 ? 'pasdisponible produit' : 'produit'">
+      @if (produit.qttRestante === 0) {
+        <p>Non Disponible</p>
+      }
+      <div class="header">
+        <h3>{{ produit.nom }}</h3>
+      </div>
+      <div class="content">
+        <img [src]="produit.photo" alt="Image du produit">
+        @if (produit.enPromo) {
+          <div class="promo">
+            <p>prix : {{produit.prix}}</p>
+            <p>{{produit.prixPromo}}€</p>
+          </div>
+        } @else {
+          <p>prix : {{produit.prix}} €</p>
+        }
+        <button>Acheter</button>
+      </div>
+    </div>
+  }
+</div>

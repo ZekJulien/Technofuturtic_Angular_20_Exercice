@@ -1,17 +1,20 @@
 @import '../../../root/app';
 
-.utilisateurs{
+.produits{
   margin: 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-.utilisateur{
+.produit{
   flex: 0 1 350px;
+  max-width: 350px;
   background-color: $secondary-color;
   border: 5px solid $primary-color;
   border-radius: 10px;
+  position: relative;
+  overflow: hidden;
 
   .header{
     display: flex;
@@ -37,27 +40,56 @@
 
     p{
       padding: 0.5rem;
-    }
-
-    textarea {
-      background-color: $secondary-color;
-      border: 2px solid $primary-color;
-      min-height: 75px;
-      border-radius: 10px;
-      overflow: hidden;
-      padding: 0.5rem;
-      margin: 0.25rem;
-    }
-
-    .trombone{
-      display: flex;
-      gap: 1rem;
       font-size: 1.2rem;
-      button {
-        flex: 1;
+      font-weight: bold;
+      color: $primary-color;
+      text-align: center;
+    }
+
+    .promo{
+      display: flex;
+      text-align: center;
+      p{
+        text-decoration: line-through;
+        flex:1;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      p:last-child{
+        text-decoration: none;
+        flex:1;
+        color: red;
       }
     }
+
   }
+}
+
+
+.produit.pasdisponible::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($primary-color, 0.5);
+}
+
+.produit.pasdisponible>p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
 }
 
 button {
@@ -76,3 +108,8 @@ button:hover {
   background-color: $primary-color;
   color: $secondary-color;
 }
+
+
+
+
+

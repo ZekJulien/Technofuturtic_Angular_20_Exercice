@@ -1,4 +1,4 @@
-@import '../../root/app';
+@use '../../root/app' as s;
 
 .navbar{
   display: flex;
@@ -10,7 +10,7 @@
     padding: 1rem;
     gap: 1rem;
     p{
-      color: $secondary-color;
+      color: s.$secondary-color;
       font-size: 1.2rem;
       font-weight: bold;
     }
@@ -23,31 +23,65 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    color: $secondary-color;
+    color: s.$secondary-color;
     padding: 1rem;
-    gap: 1rem;
+    padding-right: 2.5rem;
+    gap: 2.5rem;
     //region Menu
-    .menu{
-      .item{
+
+    .menu {
+      position: relative;
+
+      .item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        a{
-          color: $primary-color;
+
+        a {
+          color: s.$primary-color;
           margin: 0.25rem;
           border-radius: 10px;
-          background-color: $secondary-color;
+          background-color: s.$secondary-color;
+          padding: 0.5rem 1rem;
+          text-decoration: none;
+        }
+
+        .submenu {
+          display: none;
+          position: absolute;
+          top: 2.5rem;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          border-radius: 8px;
+          flex-direction: column;
+          align-items: center;
+          z-index: 10;
+          background-color: s.$primary-color;
+
+          .submenu-link {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem 0;
+            color: s.$primary-color;
+            background-color: s.$secondary-color;
+            text-decoration: none;
+            border-radius: 8px;
+
+            &:hover {
+              background-color: lighten(s.$primary-color, 10%);
+              color: s.$secondary-color;
+            }
+
+          }
+        }
+
+        &:hover .submenu {
+          display: flex;
         }
       }
-      .submenu{
-        display: none;
-        visibility: hidden;
-      }
-      .item:hover .submenu{
-        display: flex;
-        visibility: visible;
-      }
     }
+
+
     //endregion
   }
 }

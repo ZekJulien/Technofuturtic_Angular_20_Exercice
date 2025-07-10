@@ -13,8 +13,13 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 })
 export class Navbar {
   navItems: NavItem[] = [
-    {name: 'Binding', url: '/binding'},
-    {name: 'Exercices', url: '/exercices'},
-    {name: 'Directives', url: '/directives'},
+    {name: 'Demos', url: 'demos', navItems : [
+      {name: 'Binding', url: 'binding'},
+      {name: 'Directives', url: 'directives'},
+      ]},
+    {name: 'Exercices', url: 'exercices', navItems : [
+      {name: 'Binding', url: 'binding'},
+      {name: 'Directives', url: 'directives'},
+      ]},
   ];
 }

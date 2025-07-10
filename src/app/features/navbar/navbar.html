@@ -12,9 +12,9 @@
           </a>
           <div class="submenu">
             <div class="submenu-item">
-              <a  class="submenu-link"> Development </a>
-              <a  class="submenu-link"> Development </a>
-              <a  class="submenu-link"> Development </a>
+              @for (itemNav of item.navItems ; track $index) {
+                <a  class="submenu-link" [routerLink]="[item.url, itemNav.url]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> {{ itemNav.name }} </a>
+              }
             </div>
           </div>
         </div>

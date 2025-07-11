@@ -20,6 +20,7 @@ export class Navbar {
     {name: 'Exercices', url: 'exercices', navItems : [
       {name: 'Binding', url: 'binding'},
       {name: 'Directives', url: 'directives'},
+      {name: 'Pipes', url: 'pipes'},
       ]},
   ];
 }

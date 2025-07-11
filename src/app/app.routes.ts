@@ -5,12 +5,14 @@ import {ExoDirectives} from './features/exercices/directives/directives';
 import {Demos} from './features/demos/demos';
 import {DemoBinding} from './features/demos/binding/binding';
 import {DemoDirective} from './features/demos/directives/demo-directive/demo-directive';
+import {ExoPipes} from './features/exercices/pipes/pipes';
 
 export const routes: Routes = [
   { path: 'exercices', component : Exercices, children: [
       { path: '', redirectTo: 'binding', pathMatch: 'full' },
       { path: 'binding', component : ExoBinding },
-      { path: 'directives', component : ExoDirectives}
+      { path: 'directives', component : ExoDirectives},
+      { path: 'pipes', component : ExoPipes},
     ]},
   { path: 'demos', component : Demos, children: [
       { path: '', redirectTo: 'binding', pathMatch: 'full' },

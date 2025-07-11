@@ -1,0 +1,16 @@
+<p>pipes works!</p>
+
+
+<div class="stopwatch">
+  <div class="time">
+    {{ date | date:'HH:mm:ss'}}
+  </div>
+  <div class="buttons">
+    <button (click)="start()">start</button>
+    <button (click)="stop()">stop</button>
+    <button (click)="reset()">reset</button>
+  </div>
+</div>
+
+
+

@@ -1,18 +1,27 @@
-import { Component } from '@angular/core';
-import {DatePipe} from '@angular/common';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {DatePipe} from "@angular/common";
 
 @Component({
-  selector: 'exo-pipes',
-  imports: [
-    DatePipe
-  ],
-  templateUrl: './pipes.html',
-  styleUrl: './pipes.scss'
+  selector: 'exo-lifecycle',
+    imports: [
+        DatePipe
+    ],
+  templateUrl: './lifecycle.html',
+  styleUrl: './lifecycle.scss'
 })
-export class ExoPipes {
+export class ExoLifecycle implements OnInit, OnDestroy{
   protected date : Date = new Date(0,0,0,0,0,0,0);
   protected temps = 0;
   private interval?: number;
+
+  ngOnInit() {
+    console.log("Lifecycle initialized");
+    this.start()
+  }
+  ngOnDestroy() {
+    this.reset();
+    console.log("Lifecycle destroyed");
+  }
 
   start() : void {
     if (!this.interval) {

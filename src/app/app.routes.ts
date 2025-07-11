@@ -6,6 +6,7 @@ import {Demos} from './features/demos/demos';
 import {DemoBinding} from './features/demos/binding/binding';
 import {DemoDirective} from './features/demos/directives/demo-directive/demo-directive';
 import {ExoPipes} from './features/exercices/pipes/pipes';
+import {ExoLifecycle} from './features/exercices/lifecycle/lifecycle';
 
 export const routes: Routes = [
   { path: 'exercices', component : Exercices, children: [
@@ -13,6 +14,7 @@ export const routes: Routes = [
       { path: 'binding', component : ExoBinding },
       { path: 'directives', component : ExoDirectives},
       { path: 'pipes', component : ExoPipes},
+      { path: 'lifecycle', component : ExoLifecycle},
     ]},
   { path: 'demos', component : Demos, children: [
       { path: '', redirectTo: 'binding', pathMatch: 'full' },

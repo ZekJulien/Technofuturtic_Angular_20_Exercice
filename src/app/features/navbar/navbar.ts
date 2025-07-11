@@ -21,6 +21,7 @@ export class Navbar {
       {name: 'Binding', url: 'binding'},
       {name: 'Directives', url: 'directives'},
       {name: 'Pipes', url: 'pipes'},
+      {name: 'LifeCycle', url: 'lifecycle'},
       ]},
   ];
 }

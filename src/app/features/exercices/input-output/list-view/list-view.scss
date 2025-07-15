@@ -1,0 +1,53 @@
+@use '../../../../root/app' as s;
+
+button {
+  color: s.$primary-color;
+  margin: 0.25rem;
+  border: 2px solid s.$primary-color;
+  border-radius: 10px;
+  background-color: s.$secondary-color;
+}
+
+button:active {
+  transform: translateX(0.1em) translateY(0.1em);
+}
+
+button:hover {
+  background-color: s.$primary-color;
+  color: s.$secondary-color;
+}
+
+table {
+  width: 100%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background-color: s.$secondary-color;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: s.$primary-color;
+  color: s.$secondary-color;
+  font-weight: bold;
+}
+
+.btn-action {
+  padding: 8px 14px;
+  background-color: s.$primary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-action:hover {
+  background-color: red;
+}

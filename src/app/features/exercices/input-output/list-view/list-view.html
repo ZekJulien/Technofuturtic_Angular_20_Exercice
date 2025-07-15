@@ -1,0 +1,13 @@
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Action</th>
+  </tr>
+  @for (item of itemList; track $index) {
+    <tr>
+      <td>{{ item }}</td>
+      <td><button class="btn-action" (click)="deleteItem(item)">Supprimer</button></td>
+    </tr>
+  }
+</table>

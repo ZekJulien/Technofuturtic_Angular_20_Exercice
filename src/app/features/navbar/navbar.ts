@@ -22,6 +22,7 @@ export class Navbar {
       {name: 'Directives', url: 'directives'},
       {name: 'Pipes', url: 'pipes'},
       {name: 'LifeCycle', url: 'lifecycle'},
+      {name: 'Input-Output', url: 'input-output'},
       ]},
   ];
 }

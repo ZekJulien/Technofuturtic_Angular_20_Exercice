@@ -1,0 +1,17 @@
+@use '../../../root/app' as s;
+
+h1{
+  margin: 1rem;
+  text-align: center;
+}
+
+.container{
+  border: 5px solid;
+  border-color: s.$primary-color;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+  color: #333;
+  gap: 1rem;
+}

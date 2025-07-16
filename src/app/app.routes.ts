@@ -9,6 +9,7 @@ import {ExoPipes} from './features/exercices/pipes/pipes';
 import {ExoLifecycle} from './features/exercices/lifecycle/lifecycle';
 import {ExoInputOutput} from './features/exercices/input-output/input-output';
 import {ExoService} from './features/exercices/service/service';
+import { ExoFormValidators } from './features/exercices/form-validators/form-validators';
 
 export const routes: Routes = [
   { path: 'exercices', component : Exercices, children: [
@@ -18,7 +19,8 @@ export const routes: Routes = [
       { path: 'pipes', component : ExoPipes},
       { path: 'lifecycle', component : ExoLifecycle},
       { path: 'input-output', component : ExoInputOutput},
-      { path: 'service', component : ExoService},
+      { path: 'services', component : ExoService},
+      { path: 'form', component : ExoFormValidators},
     ]},
   { path: 'demos', component : Demos, children: [
       { path: '', redirectTo: 'binding', pathMatch: 'full' },

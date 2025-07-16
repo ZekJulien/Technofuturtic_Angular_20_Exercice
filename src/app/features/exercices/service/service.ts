@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {Course} from './models';
 
 @Component({
-  selector: 'exo-service',
+  selector: 'exo-services',
   imports: [
     ExoListView,
     FormsModule

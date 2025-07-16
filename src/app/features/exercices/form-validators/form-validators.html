@@ -1,0 +1,182 @@
+<h1>{{ title }}</h1>
+
+
+
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="form-wrapper">
+    <!--#region FirstName -->
+    <div class="form-group">
+      <label for="firstName">Prénom</label>
+      <input
+        id="firstName"
+        type="text"
+        formControlName="firstName"
+        placeholder="Entrez votre prénom" />
+
+      @if ((formGroup.get('firstName')?.touched && formGroup.get('firstName')?.invalid)) {
+        <div class="error-message">
+          @if (hasError('firstName','required')) {
+            <p>le prénom est obligatoire.</p>
+          }
+        </div>
+      }
+    </div>
+    <!--#endregion -->
+    <!--#region LastName -->
+    <div class="form-group">
+      <label for="lastName">Nom</label>
+      <input
+        id="lastName"
+        type="text"
+        formControlName="lastName"
+        placeholder="Entrez votre nom" />
+
+      @if ((formGroup.get('lastName')?.touched && formGroup.get('lastName')?.invalid)) {
+        <div class="error-message">
+          @if (hasError('lastName','required')) {
+            <p>le nom est obligatoire.</p>
+          }
+        </div>
+      }
+    </div>
+    <!--#endregion -->
+    <!--#region Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="text"
+        formControlName="email"
+        placeholder="Entrez votre email" />
+
+      @if ((formGroup.get('email')?.touched && formGroup.get('email')?.invalid)) {
+        <div class="error-message">
+          @if (hasError('email','required')) {
+            <p>L'email est obligatoire.</p>
+          }
+          @else if (hasError('email','email')) {
+            <p>Le format est incorrect. (ex: example&#64;example.com)</p>
+          }
+        </div>
+      }
+    </div>
+    <!--#endregion -->
+    <!--#region Description -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        rows="4"
+        placeholder="Entrez votre description"
+        formControlName="description">
+      </textarea>
+
+      @if ((formGroup.get('description')?.touched && formGroup.get('description')?.invalid)) {
+        <div class="error-message">
+          @if (hasError('description','required')) {
+            <p>la description est obligatoire.</p>
+          }
+        </div>
+      }
+    </div>
+    <!--#endregion -->
+    <!--#region At Home -->
+    <div class="form-group">
+      <label for="atHome">A domicile ?</label>
+      <input
+        (change)="isAtHome()"
+        id="atHome"
+        type="checkbox"
+        formControlName="atHome"
+      />
+    </div>
+    <!--#region Address -->
+    @if (this.formGroup.get('atHome')?.value === true) {
+      <!--#region Street -->
+      <div class="form-group">
+        <label for="street">Rue</label>
+        <input
+          id="street"
+          type="text"
+          formControlName="street"
+          placeholder="Entrez votre Rue" />
+
+        @if ((formGroup.get('street')?.touched && formGroup.get('street')?.invalid)) {
+          <div class="error-message">
+            @if (hasError('stress','required')) {
+              <p>la rue est obligatoire.</p>
+            }
+          </div>
+        }
+      </div>
+      <!--#endregion-->
+      <!--#region City -->
+      <div class="form-group">
+        <label for="city">Ville</label>
+        <input
+          id="city"
+          type="text"
+          formControlName="city"
+          placeholder="Entrez votre ville" />
+
+        @if ((formGroup.get('city')?.touched && formGroup.get('city')?.invalid)) {
+          <div class="error-message">
+            @if (hasError('city','required')) {
+              <p>la ville est obligatoire.</p>
+            }
+          </div>
+        }
+      </div>
+      <!--#endregion-->
+      <!--#region Zip -->
+      <div class="form-group">
+        <label for="zip">Code Postal</label>
+        <input
+          id="zip"
+          type="text"
+          formControlName="zip"
+          placeholder="Entrez votre code postal" />
+
+        @if ((formGroup.get('zip')?.touched && formGroup.get('zip')?.invalid)) {
+          <div class="error-message">
+            @if (hasError('zip','required')) {
+              <p>le code postal est obligatoire.</p>
+            }
+          </div>
+        }
+      </div>
+      <!--#endregion-->
+    }
+
+    <!--#endregion -->
+    <!--#endregion -->
+    <!--#region Dates -->
+    <div class="form-group" formArrayName="dates">
+      <label for="dates">Dates</label>
+      <button type="button" (click)="addAppointement()">Ajouter une date</button>
+
+      @for (date of formDates.controls; track $index ) {
+        <div class="form-group">
+          <label>Date du rendez-vous {{ $index + 1 }}</label>
+          <input type="date" [formControlName]="$index" />
+
+          <button type="button" (click)="deleteAppointement($index)">Supprimer</button>
+
+          @if ((date.touched || date.dirty) && date.invalid) {
+            @if (date.hasError('DateDelay')) {
+              <div class="error-message">
+                La date doit être au moins {{ date.getError('DateDelay')?.requiredDate }}.
+              </div>
+            }
+          }
+        </div>
+      }
+    </div>
+    <!--#endregion -->
+    <!--#region Submit-->
+    <div class="form-group">
+      <button [disabled]="!formGroup.valid" type="submit">Confirmer</button>
+    </div>
+    <!--#endregion -->
+  </div>
+</form>

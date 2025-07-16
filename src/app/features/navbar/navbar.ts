@@ -24,6 +24,7 @@ export class Navbar {
       {name: 'LifeCycle', url: 'lifecycle'},
       {name: 'Input-Output', url: 'input-output'},
       {name: 'Service', url: 'service'},
+      {name: 'Form Validators', url: 'form'},
       ]},
   ];
 }

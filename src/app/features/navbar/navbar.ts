@@ -23,6 +23,7 @@ export class Navbar {
       {name: 'Pipes', url: 'pipes'},
       {name: 'LifeCycle', url: 'lifecycle'},
       {name: 'Input-Output', url: 'input-output'},
+      {name: 'Service', url: 'service'},
       ]},
   ];
 }

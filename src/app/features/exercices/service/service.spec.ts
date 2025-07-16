@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {ExoInputOutput } from './input-output';
+import { Service } from './service';
 
-describe('InputOutput', () => {
-  let component: ExoInputOutput;
-  let fixture: ComponentFixture<ExoInputOutput>;
+describe('Service', () => {
+  let component: Service;
+  let fixture: ComponentFixture<Service>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ExoInputOutput]
+      imports: [Service]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ExoInputOutput);
+    fixture = TestBed.createComponent(Service);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

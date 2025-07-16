@@ -4,10 +4,24 @@
     <th>Nom</th>
     <th>Action</th>
   </tr>
-  @for (item of itemList; track $index) {
-    <tr>
-      <td>{{ item }}</td>
-      <td><button class="btn-action" (click)="deleteItem(item)">Supprimer</button></td>
-    </tr>
+  @if (isStringArray(itemList)) {
+    @for (item of itemList; track $index) {
+      <tr>
+        <td>{{ item }}</td>
+        <td><button class="btn-action" (click)="deleteItem($index)">Supprimer</button></td>
+      </tr>
+    }
+  }
+  @else {
+    @for (item of itemList; track $index) {
+      <tr>
+        <td>
+        @for (test of objectToPairs(item); track $index) {
+          {{ test.value }}
+        }
+        </td>
+        <td><button class="btn-action" (click)="deleteItem($index)">Supprimer</button></td>
+      </tr>
+    }
   }
 </table>

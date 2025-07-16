@@ -1,0 +1,12 @@
+<h1>Service</h1>
+
+<div class="container">
+  <div class="content">
+    <input placeholder="Nom du produit" type="text" [(ngModel)]="item">
+    <input placeholder="Quantité" type="number" [(ngModel)]="qty">
+    <button (click)="addItem()">Ajouter</button>
+  </div>
+</div>
+<div class="container">
+  <exo-list-view [itemList]="getAll()" (itemChange)="deleteItem($event)" ></exo-list-view>
+</div>

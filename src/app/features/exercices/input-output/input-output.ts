@@ -14,8 +14,8 @@ import {ExoListView} from './list-view/list-view';
 export class ExoInputOutput {
   protected itemList: string[] = [];
 
-  protected deleteItem(item : string) {
-    this.itemList = this.itemList.filter(list => list !== item);
+  protected deleteItem(index : number) {
+    this.itemList.splice(index, 1);
   }
 
   protected addItem(item: string) {

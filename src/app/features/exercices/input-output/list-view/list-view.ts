@@ -8,10 +8,21 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ExoListView {
 
-  @Input() itemList: string[] = [];
+  @Input() itemList: unknown[] = [];
   @Output() itemChange = new EventEmitter();
 
-  deleteItem(item : string) {
-    this.itemChange.emit(item);
+  deleteItem(index : number) {
+    this.itemChange.emit(index);
+  }
+
+  protected objectToPairs(obj: unknown): { key: string; value: unknown }[] {
+    return Object.entries(obj as Record<string, unknown>)
+      .map(([key, value]) => {
+        return { key, value };
+      });
+  }
+
+  isStringArray(array: unknown[]) {
+    return typeof array[0] === 'string'
   }
 }

@@ -8,6 +8,7 @@ import {DemoDirective} from './features/demos/directives/demo-directive/demo-dir
 import {ExoPipes} from './features/exercices/pipes/pipes';
 import {ExoLifecycle} from './features/exercices/lifecycle/lifecycle';
 import {ExoInputOutput} from './features/exercices/input-output/input-output';
+import {ExoService} from './features/exercices/service/service';
 
 export const routes: Routes = [
   { path: 'exercices', component : Exercices, children: [
@@ -17,6 +18,7 @@ export const routes: Routes = [
       { path: 'pipes', component : ExoPipes},
       { path: 'lifecycle', component : ExoLifecycle},
       { path: 'input-output', component : ExoInputOutput},
+      { path: 'service', component : ExoService},
     ]},
   { path: 'demos', component : Demos, children: [
       { path: '', redirectTo: 'binding', pathMatch: 'full' },

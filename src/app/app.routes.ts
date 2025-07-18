@@ -1,31 +1,20 @@
 import { Routes } from '@angular/router';
-import {ExoBinding} from './features/exercices/binding/binding';
-import {Exercices} from './features/exercices/exercices';
-import {ExoDirectives} from './features/exercices/directives/directives';
-import {Demos} from './features/demos/demos';
-import {DemoBinding} from './features/demos/binding/binding';
-import {DemoDirective} from './features/demos/directives/demo-directive/demo-directive';
-import {ExoPipes} from './features/exercices/pipes/pipes';
-import {ExoLifecycle} from './features/exercices/lifecycle/lifecycle';
-import {ExoInputOutput} from './features/exercices/input-output/input-output';
-import {ExoService} from './features/exercices/service/service';
-import { ExoFormValidators } from './features/exercices/form-validators/form-validators';
+
+export enum AppPath {
+  EXERCICES = 'exercices',
+  DEMOS = 'demos',
+}
 
 export const routes: Routes = [
-  { path: 'exercices', component : Exercices, children: [
-      { path: '', redirectTo: 'binding', pathMatch: 'full' },
-      { path: 'binding', component : ExoBinding },
-      { path: 'directives', component : ExoDirectives},
-      { path: 'pipes', component : ExoPipes},
-      { path: 'lifecycle', component : ExoLifecycle},
-      { path: 'input-output', component : ExoInputOutput},
-      { path: 'services', component : ExoService},
-      { path: 'form', component : ExoFormValidators},
-    ]},
-  { path: 'demos', component : Demos, children: [
-      { path: '', redirectTo: 'binding', pathMatch: 'full' },
-      { path: 'binding', component : DemoBinding },
-      { path: 'directives', component : DemoDirective}
-    ]},
-  { path: '**', redirectTo: 'exercices', pathMatch: 'full' },
+  {
+    path: AppPath.EXERCICES,
+    loadComponent: () => import('./features/exercices/exercices').then(c => c.Exercices),
+    loadChildren : () => import('./features/exercices/exercices.routes').then(r => r.exercicesRoutes)
+  },
+  {
+    path: AppPath.DEMOS,
+    loadComponent: () => import('./features/demos/demos').then(c => c.Demos),
+    loadChildren : () => import('./features/exercices/exercices.routes').then(r => r.exercicesRoutes)
+  },
+  { path: '**', redirectTo: AppPath.EXERCICES, pathMatch: 'full' },
 ];

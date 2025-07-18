@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavItem } from './models';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {ExercicesPath} from '../exercices/exercices.routes';
+import {AppPath} from '../../app.routes';
+import {DemosPath} from '../demos/demos.routes';
 
 @Component({
   selector: 'feat-navbar',
@@ -13,18 +16,20 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 })
 export class Navbar {
   navItems: NavItem[] = [
-    {name: 'Demos', url: 'demos', navItems : [
-      {name: 'Binding', url: 'binding'},
-      {name: 'Directives', url: 'directives'},
+    {name: 'Demos', url: AppPath.DEMOS, navItems : [
+      {name: 'Binding', url: DemosPath.BINDING},
+      {name: 'Directives', url: DemosPath.DIRECTIVES},
       ]},
-    {name: 'Exercices', url: 'exercices', navItems : [
-      {name: 'Binding', url: 'binding'},
-      {name: 'Directives', url: 'directives'},
-      {name: 'Pipes', url: 'pipes'},
-      {name: 'LifeCycle', url: 'lifecycle'},
-      {name: 'Input-Output', url: 'input-output'},
-      {name: 'Service', url: 'service'},
-      {name: 'Form Validators', url: 'form'},
+    {name: 'Exercices', url: AppPath.EXERCICES, navItems : [
+      {name: 'Binding', url: ExercicesPath.BINDING},
+      {name: 'Directives', url: ExercicesPath.DIRECTIVES},
+      {name: 'Pipes', url: ExercicesPath.PIPES},
+      {name: 'LifeCycle', url: ExercicesPath.LIFECYCLE},
+      {name: 'Input-Output', url: ExercicesPath.INPUTOUTPUT},
+      {name: 'Service', url: ExercicesPath.SERVICES},
+      {name: 'Form Validators', url: ExercicesPath.FORM},
       ]},
   ];
+  protected readonly AppPath = AppPath;
+  protected readonly ExercicesPath = ExercicesPath;
 }

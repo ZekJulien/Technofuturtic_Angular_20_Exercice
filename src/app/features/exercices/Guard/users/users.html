@@ -1,0 +1,12 @@
+<div class="content">
+  @for (user of getAll(); track user.id) {
+    <div class="user-card">
+      <div class="avatar">
+        <span class="avatar-text">{{ user.email }}</span>
+      </div>
+      <div class="user-info">
+        <button type="button" (click)="getById(user.id)"> Plus d'informations </button>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,23 @@
+@if (user) {
+  <div class="user-details">
+    <div class="user-header">
+      <div class="user-avatar">
+        {{ user.id }}
+      </div>
+      <div class="user-name">
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <p>{{ user.email }}</p>
+      </div>
+    </div>
+
+    <div class="user-info">
+      <div><strong>Rue :</strong> {{ user.street }}</div>
+      <div><strong>Ville :</strong> {{ user.city }}</div>
+    </div>
+    <div class="button">
+      <button type="button" (click)="previous()">Précedent</button>
+      <button type="button" (click)="back()">Retour</button>
+      <button type="button" (click)="next()">Suivant</button>
+    </div>
+  </div>
+}

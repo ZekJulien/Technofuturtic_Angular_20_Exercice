@@ -1,0 +1,84 @@
+@use '../../../../root/app' as s;
+
+.user-details {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background-color: s.$secondary-color;
+  color: s.$primary-color;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  .user-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: s.$primary-color;
+    color: s.$secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .user-name {
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0.2rem 0 0;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: s.$secondary-color;
+  div {
+    background-color: lighten(s.$primary-color, 5%);
+    padding: 0.5rem;
+    border-radius: 6px;
+  }
+}
+
+.button{
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+button {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  color: s.$secondary-color;
+  border-radius: 5px;
+  background-color: s.$primary-color;
+}
+
+button:active {
+  transform: translateX(0.1em) translateY(0.1em);
+}
+
+button:hover {
+  background-color: s.$secondary-color;
+  color: s.$primary-color;
+}

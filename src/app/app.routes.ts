@@ -14,7 +14,7 @@ export const routes: Routes = [
   {
     path: AppPath.DEMOS,
     loadComponent: () => import('./features/demos/demos').then(c => c.Demos),
-    loadChildren : () => import('./features/exercices/exercices.routes').then(r => r.exercicesRoutes)
+    loadChildren : () => import('./features/demos/demos.routes').then(r => r.demosRoutes)
   },
   { path: '**', redirectTo: AppPath.EXERCICES, pathMatch: 'full' },
 ];

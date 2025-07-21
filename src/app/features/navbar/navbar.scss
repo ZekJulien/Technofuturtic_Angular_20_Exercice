@@ -18,6 +18,29 @@
     img{
       height: 48px;
     }
+    .user-badge {
+      margin-left: 1rem;
+      background-color: s.$secondary-color;
+      color: s.$primary-color;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border-color: green;
+      border-style: solid;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .user-button{
+      height: 2.5rem;
+
+      button{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
   .nav-menu{
     flex: 9;
@@ -32,6 +55,7 @@
 
     .menu {
       position: relative;
+
 
       .item {
         display: flex;
@@ -59,6 +83,7 @@
           z-index: 10;
           background-color: s.$primary-color;
 
+
           .submenu-link {
             display: block;
             padding: 0.75rem 1.5rem;
@@ -67,6 +92,13 @@
             background-color: s.$secondary-color;
             text-decoration: none;
             border-radius: 8px;
+
+            &.active {
+              background-color: s.$primary-color;
+              color: s.$secondary-color;
+              font-weight: bold;
+              border: 2px solid s.$secondary-color;
+            }
 
             &:hover {
               background-color: lighten(s.$primary-color, 10%);
@@ -80,6 +112,7 @@
           display: flex;
         }
       }
+
     }
 
 

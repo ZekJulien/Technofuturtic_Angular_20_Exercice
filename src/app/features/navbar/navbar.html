@@ -2,12 +2,20 @@
   <div class="logo" [routerLink]="[AppPath.EXERCICES, ExercicesPath.HOME]">
     <img src="favicon.ico" alt="logo angular">
     <p>[Technofuturtic] Angular exercices</p>
+    @if (connectedUser()) {
+      <div class="user-badge">
+        {{ connectedUser()?.email }}
+      </div>
+      <div class="user-button">
+        <button type="button" (click)="logout()">logout</button>
+      </div>
+    }
   </div>
   <div class="nav-menu">
     @for (item of navItems; track $index) {
       <div class="menu">
         <div class="item">
-          <a [routerLink]="item.url" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="link">
+          <a [routerLink]="item.url" routerLinkActive="active" class="link">
             {{ item.name }}
           </a>
           <div class="submenu">
